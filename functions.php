@@ -37,7 +37,7 @@ register_post_type('shuoshuo',$args);
 
 
 function textarea($atts, $content = null) 
-{ return '<script src="js文件地址" type="text/javascript" charset="utf-8"></script> <form> 
+{ return '<script src="http://xiaos.life/wp-content/uploads/2018/08/2018081511133998.js" type="text/javascript" charset="utf-8"></script> <form> 
 <div align="center"> 
 <textarea id="code" style="width:555px;height:200px; border:1px solid #ff0000;" cols="80" rows="15">'.$content.'</textarea> 
 <br />
