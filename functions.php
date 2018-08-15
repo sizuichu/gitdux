@@ -35,3 +35,8 @@ $args = array( 'labels' => $labels,
 register_post_type('shuoshuo',$args);
 }
 
+
+
+
+
+

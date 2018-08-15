@@ -111,7 +111,7 @@ if (function_exists('register_sidebar')) {
 }
 
 function _hui($name, $default = false) {
-	$option_name = 'dux';
+	$option_name = 'gitdux';
 
 	/*// Gets option name as defined in the theme
 	if ( function_exists( 'optionsframework_option_name' ) ) {
@@ -1071,5 +1071,3 @@ function hui_is_my_like($pid=''){
     $likes = $likes ? unserialize($likes) : array();
     return in_array($pid, $likes) ? true : false;
 }
-
-

@@ -1032,7 +1032,7 @@ with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElemen
 		// 'name' => __('图片', 'haoui'),
 		'id' => 'focusslide_src_'.$i,
 		'desc' => __('图片，尺寸：', 'haoui').'820*200',
-		'std' => $imagepath . 'hs-xiu.jpg',
+		'std' => $imagepath . 'gitdux.jpg',
 		'type' => 'upload');
 
 	}
