@@ -2286,110 +2286,179 @@ pre.prettyprint.linenums ol li {
 .woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span{background-color: #e6e6e6;border-radius: 2px;padding: 7px 12px;color: #999;}
 .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current{background-color: #ccc;color: #fff;}
 
+.shuoshuo {
+position: relative;
+padding: 10px 0;
+}
+.shuoshuo li {
+padding: 8px 0;
+display: block;
+position: relative;
+}
+.shuoshuo-content {
+box-shadow: 0 0 3px RGBA(0,0,0,.15);
+background-color: #f2f2f2;
+border:1px #ccc solid;
+border-radius: 4px;
+font-size: 1.2em;
+line-height:1.5em;
+margin:0 150px 0 200px;
+letter-spacing: 1px;
+padding: 20px 20px 5px 30px;
+color: #666;
+min-height:60px;
+position: relative;
+	white-space: pre; /* CSS 2.0 */ 
+	white-space: pre-wrap; /* CSS 2.1 */ 
+	white-space: pre-line; /* CSS 3.0 */ 
+	white-space: -pre-wrap; /* Opera 4-6 */ 
+	white-space: -o-pre-wrap; /* Opera 7 */ 
+	white-space: -moz-pre-wrap; /* Mozilla */ 
+	white-space: -hp-pre-wrap; /* HP Printers */ 
+	word-wrap: break-word; /* IE 5+, 文本行的任意字内断开 */
+}
+.shuoshuo-content p{margin:0;}
+/*作者*/
+.shuoshuo-meta {
+text-align: right;
+letter-spacing: 0px;
+margin-top:-10px;
+}
+/*时间*/
+.shuoshuo .tt{margin: 35px 0 0 15px;float:left;font-size:0.7em;}
+.shuoshuo li em{
+    background: url("/wp-content/themes/QIUYE/images/bolangxian.png") no-repeat;
+    width: 28px;
+    height: 10px;
+    position: absolute;
+    left: -30px;
+    top: 42px;
+    z-index: 0;
+}
+.shuoshuo li:hover .tt {color:#0c0;font-weight:bold;}
+/*头像*/
+.shuoshuo .zhutou{    
+	border-radius: 50%;
+    padding: 2px;
+    border: 1px #ddd solid;
+    display: block;
+    transition: .5s;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    position: absolute;
+    right: 78px;
+    top: 34px;
+    z-index: 2;
+}
+.shuoshuo li:hover .zhutou {
+transform: rotate(720deg);-webkit-transform: rotate(720deg);-moz-transform: rotate(720deg);border-color: #0c0;}
+/*前面的轴*/
+.shuoshuo:before {
+height: 100%;
+width: 2px;
+background: #eee;
+position: absolute;
+left: 164px;
+content: "";
+top:0px;
+}
+.shuoshuo-content:before {
+position: absolute;
+top: 40px;
+bottom: 0px;
+left: -42px;
+background: #fff;
+height: 12px;
+width: 12px;
+border-radius: 6px;
+content: "";
+box-shadow: inset 0 0 2px #0c0;
+z-index:1;
+}
+.shuoshuo-content:after {
+position: absolute;
+top: 42px;
+bottom: 0px;
+left: -40px;
+background: #ccc;
+height: 8px;
+width: 8px;
+border-radius: 6px;
+content: "";
+z-index:2;
+}
+.shuoshuo li:hover .shuoshuo-content:after {
+background: #0c0;
+-webkit-transform: scale(1.3);
+-moz-transform: scale(1.3);
+-ms-transform: scale(1.3);
+-o-transform: scale(1.3);
+}
+.shuoshuo li:hover .shuoshuo-content:before {-webkit-transform: scale(1.3);
+-moz-transform: scale(1.3);
+-ms-transform: scale(1.3);
+-o-transform: scale(1.3);}
+/*后面的轴*/
+.shuoshuo:after {
+height: 100%;
+width: 2px;
+background: #eee;
+position: absolute;
+right: 100px;
+content: "";
+top:0px;
+}
+.shuoshuo-meta:before {
+position: absolute;
+top: 42px;
+bottom: 0px;
+right: -56px;
+background: #fff;
+height: 12px;
+width: 12px;
+border-radius: 6px;
+content: "";
+z-index:2;
+box-shadow: inset 0 0 2px #0c0;
+}
+.shuoshuo-meta:after {
+position: absolute;
+top: 44px;
+bottom: 0px;
+right: -54px;
+background: red;
+height: 8px;
+width: 8px;
+z-index:2;
+border-radius: 6px;
+content: "";
+}
+.shuoshuo li:hover .shuoshuo-meta:after {
+background: #0c0;
+}
+@media screen and (max-width: 800px) { 
+.shuoshuo-content {margin:0 60px 0 70px;padding: 10px 10px 5px 10px;font-size:0.9em;}
+.shuoshuo .tt{    
+	width: 130px;
+    height: 20px;
+    position: absolute;
+    left: 66px;
+    z-index: 1;
+    bottom: 10px;
+}
+.shuoshuo li:hover .tt {color:#0c0;font-size:0.5em;}
+.shuoshuo:before {left: 50px;}
+.shuoshuo-content:before {left: -26px;top:30px;}
+.shuoshuo-content:after {left: -24px;top:32px;}
 
-/* 说说css代码来自憧憬博客 */
-   #shuoshuo_content {
-       background-color: #fff;
-       padding: 10px;
-       min-height: 500px;
-   }
-   //说说
-   body.theme-dark .bsy_timeline::before {
-       background: RGBA(255, 255, 255, 0.06);
-   }
-   ul.bsy_timeline {
-       padding: 0;
-   }
-   div class.bsy_tmlabel > li .bsy_tmlabel {
-       margin-bottom: 0;
-   }
-   .bsy_timeline {
-       margin: 30px 0 0 0;
-       padding: 0;
-       list-style: none;
-       position: relative;
-   }
-   //时间
-   .bsy_timeline > li .bsy_tmtime {
-       display: block;
-       max-width: 70px;
-       position: absolute;
-   }
-   .bsy_timeline > li .bsy_tmtime span {
-       display: block;
-       text-align: right;
-   }
-   .bsy_timeline > li .bsy_tmtime span:first-child {
-       font-size: 0.9em;
-       color: #bdd0db;
-   }
-   .bsy_timeline > li .bsy_tmtime span:last-child {
-       font-size: 1.2em;
-       color: #9bcd9b;
-   }
-   .bsy_timeline > li:nth-child(odd) .bsy_tmtime span:last-child {
-       color: rgba(255, 125, 73, 0.75);
-   }
-   div.bsy_tmlabel > p {
-       margin-bottom: 0;
-   }
-   //说说内容
-   .bsy_timeline > li .bsy_tmlabel {
-       margin: 0 0 45px 65px;
-       background: #9bcd9b;
-       color: #fff;
-       padding: .8em 1.2em .4em 1.2em;
-       line-height: 1.4;
-       position: relative;
-       border-radius: 8px;
-       transition: all 0.3s ease 0s;
-       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-       display: block;
-   }
-   .bsy_tmlabel:hover {
-       transform: translateY(-3px);
-       z-index: 1;
-       -webkit-box-shadow: 0 15px 32px rgba(0, 0, 0, 0.15) !important
-   }
-   .bsy_timeline > li:nth-child(odd) .bsy_tmlabel {
-       background: rgba(255, 125, 73, 0.75);
-   }
-   //三角
-   .bsy_timeline > li .bsy_tmlabel:after {
-       right: 100%;
-       border: solid transparent;
-       content: " ";
-       height: 0;
-       width: 0;
-       position: absolute;
-       pointer-events: none;
-       border-right-color: #9bcd9b;
-       border-width: 10px;
-       top: 10px;
-   }
-   .bsy_timeline > li:nth-child(odd) .bsy_tmlabel:after {
-       border-right-color: rgba(255, 125, 73, 0.75);
-   }
-   .shuoshuo_time {
-       margin-top: 10px;
-       border-top: 1px dashed #eaeaea;
-       padding-top: 6px;
-   }
-   //头像
-   @media screen and (max-width: 65em) {
-       .bsy_timeline > li .bsy_tmtime span:last-child {
-           font-size: 1.3em;
-       }
-   }
-   .author_tou img {
-       border: 1px solid #ccc;
-       padding: 2px;
-       float: left;
-       border-radius: 8px;
-       transition: all 1.0s;
-   }
- .zhuan {
-        transform: rotateZ(720deg);
-        -webkit-transform: rotateZ(720deg);
-        -moz-transform: rotateZ(720deg);
-    }
+.shuoshuo:after {right: 27px;}
+.shuoshuo-meta:before {right: -39px;top:33px;}
+.shuoshuo-meta:after {right: -37px;top:35px;}
+
+.shuoshuo .zhutou{
+	right: 5px;
+    top: 25px;
+}
+.shuoshuo li em{width: 18px;left: -19px;top: 32px;}
+}

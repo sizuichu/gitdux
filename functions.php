@@ -36,7 +36,15 @@ register_post_type('shuoshuo',$args);
 }
 
 
+function textarea($atts, $content = null) 
+{ return '<script src="js文件地址" type="text/javascript" charset="utf-8"></script> <form> 
+<div align="center"> 
+<textarea id="code" style="width:555px;height:200px; border:1px solid #ff0000;" cols="80" rows="15">'.$content.'</textarea> 
+<br />
+ <input type="button"onclick=runCode(code) value="运行代码" style="border:1px solid #B1B4CD;background:#556b2f;color:#FFF; padding-top:5px;"> 
+ <input type="button"onclick=copycode(code) style="border:1px solid #B1B4CD;background:#556b2f;color:#FFF; padding-top:5px;"value="复制代码" onclick="copycode(runcode3)">
+ <input type="button"onclick=saveCode(code) style="border:1px solid #B1B4CD;background:#556b2f;color:#FFF; padding-top:5px;"value="另存代码" onclick="saveCode(runcode3)"> 
+ 提示：可以先修改部分代码再运行</div> </form><br>';} add_shortcode("code", "textarea");
 
-
-
+?>
 
