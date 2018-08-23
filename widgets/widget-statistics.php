@@ -3,11 +3,11 @@
 class widget_ui_statistics extends WP_Widget {
 	/*function widget_ui_statistics() {
 		$widget_ops = array( 'classname' => 'widget_ui_statistics', 'description' => '' );
-		$this->WP_Widget( 'widget_ui_statistics', 'A-网站统计', $widget_ops );
+		$this->WP_Widget( 'widget_ui_statistics', 'D-网站统计', $widget_ops );
 	}*/
 
 	function __construct(){
-		parent::__construct( 'widget_ui_statistics', 'A-网站统计', array( 'classname' => 'widget_ui_statistics' ) );
+		parent::__construct( 'widget_ui_statistics', 'GIT-网站统计', array( 'classname' => 'widget_ui_statistics' ) );
 	}
 
 	function widget( $args, $instance ) {

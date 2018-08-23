@@ -6,35 +6,8 @@ require get_stylesheet_directory() . '/functions-theme.php';
 
 
 
-//新建说说功能 
-add_action('init', 'my_custom_init');
-function my_custom_init()
-{ $labels = array( 'name' => '说说',
-'singular_name' => '说说',
-'add_new' => '发表说说',
-'add_new_item' => '发表说说',
-'edit_item' => '编辑说说',
-'new_item' => '新说说',
-'view_item' => '查看说说',
-'search_items' => '搜索说说',
-'not_found' => '暂无说说',
-'not_found_in_trash' => '没有已遗弃的说说',
-'parent_item_colon' => '', 'menu_name' => '说说' );
-$args = array( 'labels' => $labels,
-'public' => true,
-'publicly_queryable' => true,
-'show_ui' => true,
-'show_in_menu' => true,
-'exclude_from_search' =>true,
-'query_var' => true,
-'rewrite' => true, 'capability_type' => 'post',
-'has_archive' => false, 'hierarchical' => false,
-'menu_position' => null,
-'taxonomies'=> array('category','post_tag'),
-'supports' => array('editor','author','title', 'custom-fields','comments') );
-register_post_type('shuoshuo',$args);
-}
-
+//说说
+ add_action('init', 'my_custom_init'); function my_custom_init() { $labels = array( 'name' => '说说', 'singular_name' => 'singularname', 'add_new' => '发表说说', 'add_new_item' => '发表说说', 'edit_item' => '编辑说说', 'new_item' => '新说说', 'view_item' => '查看说说', 'search_items' => '搜索说说', 'not_found' => '暂无说说', 'not_found_in_trash' => '没有已遗弃的说说', 'parent_item_colon' => '', 'menu_name' => '说说' ); $args = array( 'labels' => $labels, 'public' => true, 'publicly_queryable' => true, 'show_ui' => true, 'show_in_menu' => true, 'query_var' => true, 'rewrite' => true, 'capability_type' => 'post', 'has_archive' => true, 'hierarchical' => false, 'menu_position' => null, 'supports' => array('title','editor','author') ); register_post_type('shuoshuo',$args); }
 
 function textarea($atts, $content = null) 
 { return '<script src="http://xiaos.life/wp-content/uploads/2018/08/2018081511133998.js" type="text/javascript" charset="utf-8"></script> <form> 
@@ -46,35 +19,66 @@ function textarea($atts, $content = null)
  <input type="button"onclick=saveCode(code) style="border:1px solid #B1B4CD;background:#556b2f;color:#FFF; padding-top:5px;"value="另存代码" onclick="saveCode(runcode3)"> 
  提示：可以先修改部分代码再运行</div> </form><br>';} add_shortcode("code", "textarea");
 
- //生成文章二维码
- 
- function zm_content_insert( $return = 0 ) {// 插入的内容
-	$str.= "<hr>";
-	$str.= "<div class='same'>";
+
+ //自定义登录页面的LOGO图片
+function my_custom_login_logo() {
+    echo '<style type="text/css">
+        .login h1 a {
+            background-image:url("http://s.xiaos.life/wp-content/themes/gitdux/img/logo.png") !important;
+        height: 60px; //修改为图片的高度
+        width: 250px; //修改为图标的宽度
+        -webkit-background-size: 250px; //修改为图标的宽度
+        background-size: 250px; //修改为图标的宽度
+        }
+    </style>';
+}
+add_action('login_head', 'my_custom_login_logo');
+
+//自定义登录页面LOGO提示为任意文本
+function custom_loginlogo_desc($url) {
+    return '欢迎登录小生活'; //修改文本信息
+}
+add_filter( 'login_headertitle', 'custom_loginlogo_desc' );
 
 
-	$str.= "<p>声明：<a href='http://xiaos.life/shengming.html' rel='external nofollow' target='_blank'>若无特殊声明，本文皆为原创，转载请注明文章信息！</a></p>";
-	$str.= "</div>";
-	if ($return) { return $str; } else { echo $str; }
+//判断百度收录
+function v7v3_bdsl($url){
+    $url='http://www.baidu.com/s?wd='.$url;
+    $curl=curl_init();
+    curl_setopt($curl,CURLOPT_URL,$url);
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+    $rs=curl_exec($curl);
+    curl_close($curl);
+    if(!strpos($rs,'没有找到与')){
+        return 1;
+    }else{
+        return 0;
+    }  
 }
-function zm_content_filter($content) {
-	if(!is_feed() && !is_home() && is_singular() && is_main_query()) {
-		$content .= zm_content_insert(1);// 0在正文上面
-		//$content .= zm_content_insert(1);//1在正文下面
-	}
-	return $content;
-}
-add_filter('the_content','zm_content_filter');
- 
- //自定义登录页面风格
-function uazoh_custom_login_page() {
-echo'<style type="text/css">#login form {-webkit-box-shadow:0 2px 5px 0 rgba(146,146,146,.1);-moz-box-shadow:0 2px 5px 0 rgba(146,146,146,.1);box-shadow:0 8px 25px 0 rgba(146,146,146,0.21);}#login form .forgetmenot{float:none}
-#login form p.submit{padding: 20px 0 0;}#login form p.submit .button-primary{float:none;background-color: #494949;font-weight: bold;color: #fff;width: 100%;height: 40px;border-width: 0;border-color:none}#login form input{box-shadow:none!important;outline:none!important}</style>';
-}
-add_action('login_head', 'uazoh_custom_login_page');
 
-require get_template_directory() . '/avatar/zm-first-letter-avatar.php';
-//添加文章格式
+//展开收缩功能
+function xcollapse($atts, $content = null){
+    extract(shortcode_atts(array("title"=>""),$atts));
+    return '<div style="margin: 0.5em 0;">
+        <div class="xControl">
+            <span class="xTitle">'.$title.'</span> 
+            <a href="javascript:void(0)" class="collapseButton xButton">展开/收缩</a>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="xContent" style="display: none;">'.$content.'</div>
+    </div>';
+}
+add_shortcode('collapse', 'xcollapse');
+
+// 添加HTML按钮
+function appthemes_add_quicktags() {
+?> 
+<script type="text/javascript"> 
+QTags.addButton( '文字收缩', '文字收缩', '\n[collapse title=标题]', '[/collapse]\n' );
+</script>
+<?php
+}
+add_action('admin_print_footer_scripts', 'appthemes_add_quicktags' );
+
 
 ?>
-

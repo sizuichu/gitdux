@@ -3,11 +3,11 @@
 class widget_ui_readers extends WP_Widget {
 	/*function widget_ui_readers() {
 		$widget_ops = array( 'classname' => 'widget_ui_readers', 'description' => '显示近期评论频繁的网友头像等' );
-		$this->WP_Widget( 'widget_ui_readers', 'A-活跃读者', $widget_ops );
+		$this->WP_Widget( 'widget_ui_readers', 'D-活跃读者', $widget_ops );
 	}*/
 
 	function __construct(){
-		parent::__construct( 'widget_ui_readers', 'A-活跃读者', array( 'classname' => 'widget_ui_readers' ) );
+		parent::__construct( 'widget_ui_readers', 'GIT-活跃读者', array( 'classname' => 'widget_ui_readers' ) );
 	}
 
 	function widget( $args, $instance ) {

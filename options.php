@@ -113,18 +113,18 @@ function optionsframework_options() {
 
 	// ======================================================================================================================
 	$options[] = array(
-		'name' => __('基本设置', 'haoui'),
+		'name' => __('基本', 'haoui'),
 		'type' => 'heading');
 
 	$options[] = array(
 		'name' => __('Logo', 'haoui'),
 		'id' => 'logo_src',
-		'desc' => __('Logo 最大高：32px；建议尺寸：140*32px 格式：png', 'haoui'),
+		'desc' => __('Logo不会做？去themebetter提交工单求助！Logo 最大高：32px；建议尺寸：140*32px 格式：png', 'haoui'),
 		'std' => $imagepath . 'logo.png',
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('主题布局', 'haoui'),
+		'name' => __('布局', 'haoui'),
 		'id' => 'layout',
 		'std' => "2",
 		'type' => "radio",
@@ -167,7 +167,7 @@ function optionsframework_options() {
 	
 
 	$options[] = array(
-		'name' => __('网页宽度', 'haoui'),
+		'name' => __('网页最大宽度', 'haoui'),
 		'id' => 'site_width',
 		'std' => 1200,
 		'class' => 'mini',
@@ -175,11 +175,11 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('底部设置', 'haoui').' ',
+		'name' => __('底部友情链接', 'haoui').' (v1.5+)',
 		'id' => 'flinks_s',
 		'type' => "checkbox",
 		'std' => false,
-		'desc' => __('开启', 'haoui').__('（此为底部友情链接设置，开启后会在页面底部增加一个链接模块）', 'haoui'));
+		'desc' => __('开启', 'haoui').__('（开启后会在页面底部增加一个链接模块）', 'haoui'));
 
 	$options[] = array(
 		'id' => 'flinks_home_s',
@@ -201,15 +201,15 @@ function optionsframework_options() {
 
 
 	$options[] = array(
-		'name' => __('底部加载', 'haoui'),
+		'name' => __('jQuery底部加载', 'haoui'),
 		'id' => 'jquery_bom',
 		'type' => "checkbox",
 		'std' => false,
-		'desc' => __('开启', 'haoui').__('（jQuery可提高页面内容加载速度，但部分依赖jQuery的插件可能失效）', 'haoui'));
+		'desc' => __('开启', 'haoui').__('（可提高页面内容加载速度，但部分依赖jQuery的插件可能失效）', 'haoui'));
 
 
 	$options[] = array(
-		'name' => __('头像获取', 'haoui'),
+		'name' => __('Gravatar 头像获取', 'haoui'),
 		'id' => 'gravatar_url',
 		'std' => "ssl",
 		'type' => "radio",
@@ -220,7 +220,7 @@ function optionsframework_options() {
 		));
 
 	$options[] = array(
-		'name' => __('文件托管（可大幅提速JS加载）', 'haoui'),
+		'name' => __('JS文件托管（可大幅提速JS加载）', 'haoui'),
 		'id' => 'js_outlink',
 		'std' => "no",
 		'type' => "radio",
@@ -231,7 +231,7 @@ function optionsframework_options() {
 		));
 
 	$options[] = array(
-		'name' => __('网站变灰', 'haoui'),
+		'name' => __('网站整体变灰', 'haoui'),
 		'id' => 'site_gray',
 		'type' => "checkbox",
 		'std' => false,
@@ -257,28 +257,28 @@ function optionsframework_options() {
 	
 
 	$options[] = array(
-		'name' => __('底部信息', 'haoui'),
+		'name' => __('网站底部信息', 'haoui'),
 		'id' => 'footer_seo',
 		'std' => '<a href="'.site_url('/sitemap.xml').'">'.__('网站地图', 'haoui').'</a>'."\n",
 		'desc' => __('备案号可写于此，网站地图可自行使用sitemap插件自动生成', 'haoui'),
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => __('手机导航', 'haoui').' ',
+		'name' => __('手机端导航', 'haoui').' (v4.0+)',
 		'id' => 'm_navbar',
 		'type' => "checkbox",
 		'std' => true,
 		'desc' => __('开启', 'haoui'));
 
 	$options[] = array(
-		'name' => __('电脑搜索', 'haoui').' ',
+		'name' => __('电脑端搜索功能', 'haoui').' (v4.0+)',
 		'id' => 'pc_search',
 		'type' => "checkbox",
 		'std' => true,
 		'desc' => __('开启', 'haoui'));
 
 	$options[] = array(
-		'name' => __('手机端搜索', 'haoui').' ',
+		'name' => __('手机端搜索功能', 'haoui').' (v4.0+)',
 		'id' => 'm_search',
 		'type' => "checkbox",
 		'std' => true,
@@ -338,7 +338,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('首页不显示以下ID的文章', 'haoui'),
 		'id' => 'notinhome_post',
-		'std' => "1\n2",
+		'std' => "11245\n12846",
 		'desc' => __('每行填写一个文章ID', 'haoui'),
 		'settings' => array(
 			'rows' => 2
@@ -361,12 +361,12 @@ function optionsframework_options() {
 		'options' => array(
 			'thumb' => __('图文模式（缩略图尺寸：220*150px，默认已自动裁剪）', 'haoui'),
 			'text' => __('文字模式 ', 'haoui'),
-			'thumb_if_has' => __('图文模式，无特色图时自动转换为文字模式 ', 'haoui').' ',
+			'thumb_if_has' => __('图文模式，无特色图时自动转换为文字模式 ', 'haoui').' (v1.6+)',
 		));
 
 
 	$options[] = array(
-		'name' => __('自动使用文章第一张图作为缩略图', 'haoui').' ',
+		'name' => __('自动使用文章第一张图作为缩略图', 'haoui').' (v1.9+)',
 		'id' => 'thumb_postfirstimg_s',
 		'type' => "checkbox",
 		'std' => false,
@@ -379,7 +379,7 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('外链缩略图输入', 'haoui').' ',
+		'name' => __('外链缩略图输入', 'haoui').' (v1.8+)',
 		'id' => 'thumblink_s',
 		'type' => "checkbox",
 		'std' => false,
@@ -459,7 +459,7 @@ function optionsframework_options() {
 		'desc' => __('开启', 'haoui').__('（列表和文章有作者的地方都会加上链接） ', 'haoui'));
 
 	$options[] = array(
-		'name' => __('文章缩略图异步加载', 'haoui').' ',
+		'name' => __('文章缩略图异步加载', 'haoui').' (v1.4+)',
 		'id' => 'thumbnail_src',
 		'type' => "checkbox",
 		'std' => true,
@@ -467,14 +467,14 @@ function optionsframework_options() {
 
 
 	$options[] = array(
-		'name' => __('分享功能', 'haoui').' ',
+		'name' => __('分享功能', 'haoui').' (v1.8+)',
 		'id' => 'share_s',
 		'type' => "checkbox",
 		'std' => true,
 		'desc' => __('开启', 'haoui'));
 
 	$options[] = array(
-		'name' => __('分享代码', 'haoui').' ',
+		'name' => __('分享代码', 'haoui').' (v1.8+)',
 		'id' => 'share_code',
 		'std' => '<div class="bdsharebuttonbox">
 <span>分享到：</span>
@@ -521,7 +521,7 @@ with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElemen
 	$options[] = array(
 		'id' => 'fqq_id',
 		'desc' => 'QQ号码',
-		'std' => '1625621257',
+		'std' => '937373201',
 		'type' => 'text');
 
 	$options[] = array(
@@ -934,7 +934,7 @@ with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElemen
 		'name' => __('推广标题', 'haoui'),
 		'id' => 'footer_brand_title',
 		'desc' => '建议20字内',
-		'std' => '小生活 慢慢成长的世界',
+		'std' => '大前端WP主题 更专业 更方便',
 		'type' => 'text');
 
 	for ($i=1; $i <= 2; $i++) { 
@@ -1170,7 +1170,7 @@ with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElemen
 	$options[] = array(
 		'name' => __('首页最新发布标题', 'haoui'),
 		'id' => 'index_list_title',
-		'std' => __('热门推荐', 'haoui'),
+		'std' => __('最新发布', 'haoui'),
 		'type' => 'text');
 
 	$options[] = array(

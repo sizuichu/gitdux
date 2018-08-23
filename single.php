@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <?php if( _hui('breadcrumbs_single_s') ){ ?>
 	<div class="breadcrumbs">
 		<div class="container"><?php echo hui_breadcrumbs() ?></div>
@@ -30,6 +31,9 @@
 			echo '<div class="asb-post-footer"><b>AD：</b><strong>【' . _hui('ads_post_footer_pretitle') . '】</strong><a'.(_hui('ads_post_footer_link_blank')?' target="_blank"':'').' href="' . _hui('ads_post_footer_link') . '">' . _hui('ads_post_footer_title') . '</a></div>';
 		} ?>
 		<?php tb_xzh_render_tail() ?>
+		
+
+
 		<?php 
 		$link = get_post_meta(get_the_ID(), 'link', true);
 		if( _hui('post_like_s') || _hui('post_rewards_s') || (_hui('post_link_single_s')&&$link) ){ ?>
@@ -45,10 +49,14 @@
 			echo '<div class="post-copyright">' . _hui('post_copyright') . '<a href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a> &raquo; <a href="' . get_permalink() . '">' . get_the_title() . '</a></div>';
 		} ?>
 		<?php endwhile; ?>
-
+ <div style="background:#32b35b;padding:5px;font-color:while;text-align:center;">
+ <?php if(v7v3_bdsl("get_permalink()") == 1) echo "百度已收录"; else echo "百度未收录"; ?> 
+ </div>
 		<?php if( !wp_is_mobile() || (!_hui('m_post_share_s') && wp_is_mobile()) ){ ?>
 			<div class="action-share"><?php _moloader('mo_share'); ?></div>
 		<?php } ?>
+		
+		
 
 		<div class="article-tags"><?php the_tags('标签：','',''); ?></div>
 		

@@ -3,11 +3,11 @@
 class widget_ui_sticky extends WP_Widget {
 	/*function widget_ui_sticky() {
 		$widget_ops = array( 'classname' => 'widget_ui_posts', 'description' => '图文展示' );
-		$this->WP_Widget( 'widget_ui_sticky', 'A-置顶推荐', $widget_ops );
+		$this->WP_Widget( 'widget_ui_sticky', 'D-置顶推荐', $widget_ops );
 	}*/
 
 	function __construct(){
-		parent::__construct( 'widget_ui_sticky', 'A-置顶推荐', array( 'classname' => 'widget_ui_posts' ) );
+		parent::__construct( 'widget_ui_sticky', 'GIT-置顶推荐', array( 'classname' => 'widget_ui_posts' ) );
 	}
 
 	function widget( $args, $instance ) {

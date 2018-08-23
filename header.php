@@ -53,7 +53,7 @@
 				<?php _moloader('mo_get_user_page', false) ?>
 				Hi, <?php echo $current_user->display_name ?>
 				<?php if( _hui('user_page_s') ){ ?>
-					&nbsp; &nbsp; <a href="<?php echo mo_get_user_page() ?>">会员中心</a>
+					&nbsp; &nbsp; <a href="<?php echo mo_get_user_page() ?>">进入会员中心</a>
 				<?php } ?>
 				<?php if( is_super_admin() ){ ?>
 					&nbsp; &nbsp; <a target="_blank" href="<?php echo site_url('/wp-admin/') ?>">后台管理</a>
@@ -83,3 +83,11 @@
 		?>
 	</div>
 </div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function(jQuery) {
+        jQuery('.collapseButton').click(function() {
+            jQuery(this).parent().parent().find('.xContent').slideToggle('slow');
+        });
+    });
+</script>

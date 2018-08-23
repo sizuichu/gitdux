@@ -7,7 +7,7 @@ class widget_ui_ads extends WP_Widget {
 	}*/
 
 	function __construct(){
-		parent::__construct( 'widget_ui_ads', 'A-广告', array( 'classname' => 'widget_ui_asb' ) );
+		parent::__construct( 'widget_ui_ads', 'DUX 广告', array( 'classname' => 'widget_ui_asb' ) );
 	}
 
 	function widget( $args, $instance ) {

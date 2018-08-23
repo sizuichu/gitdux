@@ -7,7 +7,7 @@ class widget_ui_comments extends WP_Widget {
 	}*/
 
 	function __construct(){
-		parent::__construct( 'widget_ui_comments', 'A-最新评论', array( 'classname' => 'widget_ui_comments' ) );
+		parent::__construct( 'widget_ui_comments', 'DUX 最新评论', array( 'classname' => 'widget_ui_comments' ) );
 	}
 
 	function widget( $args, $instance ) {

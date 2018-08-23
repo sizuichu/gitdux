@@ -14,8 +14,7 @@ $widgets = array(
 	'comments',
 	'posts',
 	'readers',
-	'tags',
-	
+	'tags'
 );
 
 foreach ($widgets as $widget) {

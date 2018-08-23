@@ -3,11 +3,11 @@
 class widget_ui_posts extends WP_Widget {
 	/*function widget_ui_posts() {
 		$widget_ops = array( 'classname' => 'widget_ui_posts', 'description' => '图文展示（最新文章+热门文章+随机文章）' );
-		$this->WP_Widget( 'widget_ui_posts', 'A-聚合文章', $widget_ops );
+		$this->WP_Widget( 'widget_ui_posts', 'D-聚合文章', $widget_ops );
 	}*/
 
 	function __construct(){
-		parent::__construct( 'widget_ui_posts', 'A-聚合文章', array( 'classname' => 'widget_ui_posts' ) );
+		parent::__construct( 'widget_ui_posts', 'GIT-聚合文章', array( 'classname' => 'widget_ui_posts' ) );
 	}
 
 	function widget( $args, $instance ) {

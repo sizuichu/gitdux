@@ -3,11 +3,11 @@
 class widget_ui_tags extends WP_Widget {
 	/*function widget_ui_tags() {
 		$widget_ops = array( 'classname' => 'widget_ui_tags', 'description' => '显示热门标签' );
-		$this->WP_Widget( 'widget_ui_tags', 'A-标签云', $widget_ops );
+		$this->WP_Widget( 'widget_ui_tags', 'D-标签云', $widget_ops );
 	}*/
 
 	function __construct(){
-		parent::__construct( 'widget_ui_tags', 'A-标签云', array( 'classname' => 'widget_ui_tags' ) );
+		parent::__construct( 'widget_ui_tags', 'GIT-标签云', array( 'classname' => 'widget_ui_tags' ) );
 	}
 
 	function widget( $args, $instance ) {

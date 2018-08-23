@@ -7,7 +7,7 @@ class widget_ui_textads extends WP_Widget {
 	}*/
 
 	function __construct(){
-		parent::__construct( 'widget_ui_textads', 'A-特别推荐', array( 'classname' => 'widget_ui_textasb' ) );
+		parent::__construct( 'widget_ui_textads', 'GIT-特别推荐', array( 'classname' => 'widget_ui_textasb' ) );
 	}
 
 	function widget( $args, $instance ) {
@@ -34,10 +34,10 @@ class widget_ui_textads extends WP_Widget {
 
 	function form($instance) {
 		$defaults = array( 
-			'title' => 'Xiaos 小生活', 
-			'tag' => '强力推荐', 
+			'title' => 'Tao淘宝优惠券', 
+			'tag' => '吐血推荐', 
 			'blank' => 'on', 
-			'content' => '淘宝优惠券怎么领取?相信还有很多人不知道,访问:淘优惠,可以随时领取到最新的淘宝优惠券,优惠券每日更新,欢迎大家使用...', 
+			'content' => '每天万款无门槛优惠券限时发放.购物先领券,网购省一半,分享还能赚佣金,月入3000+,内部员工都是这么操作,一个月下来买东西省不少.', 
 			'link' => 'https://jopuw.cn', 
 			'style' => 'style02'
 		);
